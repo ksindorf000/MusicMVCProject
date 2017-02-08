@@ -44,7 +44,16 @@ namespace Music.Controllers
         // GET: Album to edit
         public ActionResult Edit(int? id)
         {
-            ViewBag.BandId = new SelectList(db.Bands, "Id", "Name");
+            var bandId = db.Albums.Where(a => a.Id == id).Select(a => a.BandId);
+
+            /*
+             * SELECT b.Id
+             * FROM Band b
+             * INNER JOIN Album a ON a.BandId == b.Id
+             * WHERE a.Id = id
+             */
+
+            ViewBag.BandId = new SelectList(db.Bands, "Id", "Name", bandId);
 
             if (id == null)
             {
@@ -55,6 +64,7 @@ namespace Music.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(album);
         }
 
@@ -72,6 +82,32 @@ namespace Music.Controllers
                 return RedirectToAction("Index");
             }
             return View(album);
+        }
+
+        // GET: Album/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Album album = db.Albums.Find(id);
+            if (album == null)
+            {
+                return HttpNotFound();
+            }
+            return View(album);
+        }
+
+        // POST: Album/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Album album = db.Albums.Find(id);
+            db.Albums.Remove(album);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
