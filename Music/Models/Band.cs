@@ -16,6 +16,7 @@ namespace Music.Models
         public DateTime Formed { get; set; }
 
         public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Track> Tracks { get; set; }
 
     }
 
@@ -23,6 +24,7 @@ namespace Music.Models
     {
         public DbSet<Band> Bands { get; set; }
         public DbSet<Album> Albums { get; set; }
+        public DbSet<Track> Tracks { get; set; }
     }
 
 }

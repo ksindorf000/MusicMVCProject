@@ -19,6 +19,7 @@ namespace Music.Models
         [Column(TypeName = "datetime2")]
         public DateTime ReleaseDate { get; set; }
 
-        public virtual Band Band { get; set; }        
+        public virtual Band Band { get; set; }
+        public virtual Track Track { get; set; }
     }
 }

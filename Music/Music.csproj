@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\BandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,9 +159,18 @@
     <Compile Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.Designer.cs">
       <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702081853094_AddTracks.cs" />
+    <Compile Include="Migrations\201702081853094_AddTracks.Designer.cs">
+      <DependentUpon>201702081853094_AddTracks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702081936500_UpdateTrack.cs" />
+    <Compile Include="Migrations\201702081936500_UpdateTrack.Designer.cs">
+      <DependentUpon>201702081936500_UpdateTrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Band.cs" />
+    <Compile Include="Models\Track.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +215,8 @@
     <Content Include="Views\Album\Create.cshtml" />
     <Content Include="Views\Album\Edit.cshtml" />
     <Content Include="Views\Album\Delete.cshtml" />
+    <Content Include="Views\Album\Details.cshtml" />
+    <Content Include="Views\Track\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -235,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.resx">
       <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702081853094_AddTracks.resx">
+      <DependentUpon>201702081853094_AddTracks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702081936500_UpdateTrack.resx">
+      <DependentUpon>201702081936500_UpdateTrack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

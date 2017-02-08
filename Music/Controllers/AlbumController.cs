@@ -12,7 +12,7 @@ namespace Music.Controllers
     public class AlbumController : Controller
     {
         private BandsContext db = new BandsContext();
-
+        
         // GET: Album
         public ActionResult Index()
         {
@@ -24,6 +24,23 @@ namespace Music.Controllers
         {
             ViewBag.BandId = new SelectList(db.Bands, "Id", "Name");
             return View();
+        }
+
+        // GET: Band/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Album album = db.Albums.Find(id);
+            if (album == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.trackList = db.Tracks.Where(t => t.Album.Id == id).ToList();
+            return View(album);
         }
 
         // CREATE: Album
@@ -44,30 +61,31 @@ namespace Music.Controllers
         // GET: Album to edit
         public ActionResult Edit(int? id)
         {
-            var bandId = db.Albums.Where(a => a.Id == id).Select(a => a.BandId);
-
             /*
              * SELECT b.Id
              * FROM Band b
              * INNER JOIN Album a ON a.BandId == b.Id
              * WHERE a.Id = id
              */
-
-            ViewBag.BandId = new SelectList(db.Bands, "Id", "Name", bandId);
-
+             
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Album album = db.Albums.Find(id);
+            ViewBag.BandId = new SelectList(db.Bands, "Id", "Name", album.BandId);
+
             if (album == null)
             {
                 return HttpNotFound();
             }
 
+            ViewBag.trackList = db.Tracks.Where(t => t.Album.Id == id).ToList();
+
             return View(album);
         }
-
+                
         // POST: Album Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
