@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\BandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,7 +138,28 @@
     <Compile Include="Migrations\201702080308016_Initial.Designer.cs">
       <DependentUpon>201702080308016_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702080322488_AddedAlbum.cs" />
+    <Compile Include="Migrations\201702080322488_AddedAlbum.Designer.cs">
+      <DependentUpon>201702080322488_AddedAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702080325102_AddedAlbumToContext.cs" />
+    <Compile Include="Migrations\201702080325102_AddedAlbumToContext.Designer.cs">
+      <DependentUpon>201702080325102_AddedAlbumToContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702080358117_RemoveTrackListFromAlbum.cs" />
+    <Compile Include="Migrations\201702080358117_RemoveTrackListFromAlbum.Designer.cs">
+      <DependentUpon>201702080358117_RemoveTrackListFromAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702080407387_MadeReleaseDateNullable.cs" />
+    <Compile Include="Migrations\201702080407387_MadeReleaseDateNullable.Designer.cs">
+      <DependentUpon>201702080407387_MadeReleaseDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs" />
+    <Compile Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.Designer.cs">
+      <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Band.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,6 +201,9 @@
     <Content Include="Views\Band\Details.cshtml" />
     <Content Include="Views\Band\Edit.cshtml" />
     <Content Include="Views\Band\Index.cshtml" />
+    <Content Include="Views\Album\Index.cshtml" />
+    <Content Include="Views\Album\Create.cshtml" />
+    <Content Include="Views\Album\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -194,6 +219,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702080308016_Initial.resx">
       <DependentUpon>201702080308016_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702080322488_AddedAlbum.resx">
+      <DependentUpon>201702080322488_AddedAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702080325102_AddedAlbumToContext.resx">
+      <DependentUpon>201702080325102_AddedAlbumToContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702080358117_RemoveTrackListFromAlbum.resx">
+      <DependentUpon>201702080358117_RemoveTrackListFromAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702080407387_MadeReleaseDateNullable.resx">
+      <DependentUpon>201702080407387_MadeReleaseDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.resx">
+      <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
