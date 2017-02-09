@@ -16,7 +16,14 @@ namespace Music.Controllers
         {            
             return View(db.Tracks.Where(t => t.Album.Id == id).ToList());
         }
-        
+
+        // GET: Tracks for given album
+        public ActionResult Create(int? id)
+        {
+            ViewBag.CurrentAlbum = db.Albums.Where(a => a.Id == id).FirstOrDefault().Title;
+            return View();
+        }
+
         // CREATE: Track
         [HttpPost]
         [ValidateAntiForgeryToken]

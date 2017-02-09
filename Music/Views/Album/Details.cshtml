@@ -44,12 +44,12 @@
                 @Html.DisplayFor(model => model.Track.Title)
             </dd>
         }
-
-        
+                
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Add Tracks", "Create", "Track", new { id = Model.Id }, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>

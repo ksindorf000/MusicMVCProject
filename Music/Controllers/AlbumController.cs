@@ -61,12 +61,6 @@ namespace Music.Controllers
         // GET: Album to edit
         public ActionResult Edit(int? id)
         {
-            /*
-             * SELECT b.Id
-             * FROM Band b
-             * INNER JOIN Album a ON a.BandId == b.Id
-             * WHERE a.Id = id
-             */
              
             if (id == null)
             {
@@ -80,9 +74,6 @@ namespace Music.Controllers
             {
                 return HttpNotFound();
             }
-
-            ViewBag.trackList = db.Tracks.Where(t => t.Album.Id == id).ToList();
-
             return View(album);
         }
                 
