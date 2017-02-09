@@ -17,7 +17,7 @@
         <dd>
             @Html.DisplayFor(model => model.Band.Name)
         </dd>
-        
+
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -33,23 +33,26 @@
         <dd>
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
-
-        @foreach (var track in ViewBag.trackList)
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.Track.Title)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Track.Title)
-            </dd>
-        }
-                
-
     </dl>
 </div>
+
+<table>
+    @foreach (var track in ViewBag.trackList)
+    {
+        <tr>
+            <td>
+                @track.Title;
+                @Html.DisplayNameFor(model => model.Track.Title)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Track.Title)
+            </td>
+        </tr>
+    }
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Add Tracks", "Create", "Track", new { id = Model.Id }, null) |
+    @*@Html.ActionLink("Add Tracks", "Create", "Track", new { id = Model.Id }, null) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>

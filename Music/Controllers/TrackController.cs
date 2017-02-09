@@ -20,14 +20,14 @@ namespace Music.Controllers
         // GET: Tracks for given album
         public ActionResult Create(int? id)
         {
-            ViewBag.CurrentAlbum = db.Albums.Where(a => a.Id == id).FirstOrDefault().Title;
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name");
             return View();
         }
 
         // CREATE: Track
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Album,Title,Length")] Track track)
+        public ActionResult Create([Bind(Include = "Id,AlbumId,Title,Length")] Track track)
         {
             if (ModelState.IsValid)
             {

@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\BandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +218,8 @@
     <Content Include="Views\Album\Delete.cshtml" />
     <Content Include="Views\Album\Details.cshtml" />
     <Content Include="Views\Track\Create.cshtml" />
+    <Content Include="Views\Search\BandResults.cshtml" />
+    <Content Include="Views\Search\AlbumResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
