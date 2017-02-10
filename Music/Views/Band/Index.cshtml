@@ -10,12 +10,15 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<form>
-    <div class="form-group">
-        @Html.TextBox("SearchString") <br />
-        <a href="@Url.Action("BandResults", "Search", )" class="btn btn-default">Search By Band</a>
-    </div>
-</form>
+<p>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("Search", null, new { @class = "form-control" })
+        <br />
+        <input type="submit" value="Search" class="btn=btn-default" />
+        @Html.ActionLink("Clear Search", "Index")
+    }
+</p>
 
 <table class="table">
     <tr>

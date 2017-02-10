@@ -17,7 +17,17 @@ namespace Music.Controllers
         // GET: Band
         public ActionResult Index()
         {
+            //Add the search to the ViewBag
             return View(db.Bands.ToList());
+        }
+
+        // POST: Band Search
+        [HttpPost]
+        public ActionResult Index(BandSearch searchBox)
+        {
+            var bands = db.Bands
+                .Where(b => b.Name.Contains(searchBox.Search));
+            return View(bands.ToList());
         }
 
         // GET: Band/Details/5
