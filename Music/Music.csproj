@@ -218,8 +218,6 @@
     <Content Include="Views\Album\Delete.cshtml" />
     <Content Include="Views\Album\Details.cshtml" />
     <Content Include="Views\Track\Create.cshtml" />
-    <Content Include="Views\Search\BandResults.cshtml" />
-    <Content Include="Views\Search\AlbumResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
