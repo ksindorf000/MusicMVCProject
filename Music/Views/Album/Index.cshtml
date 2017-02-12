@@ -9,6 +9,18 @@
 <p>
     @Html.ActionLink("Create New", "Create", "Album")
 </p>
+
+<p>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("Search", null, new { @class = "form-control" })
+        <br />
+        <input type="submit" value="Search" class="btn=btn-default" />
+        @Html.ActionLink("Clear Search", "Index")
+    }
+</p>
+
+
 <table class="table">
     <tr>
         <th>

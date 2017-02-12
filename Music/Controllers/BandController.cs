@@ -17,7 +17,6 @@ namespace Music.Controllers
         // GET: Band
         public ActionResult Index()
         {
-            //Add the search to the ViewBag
             return View(db.Bands.ToList());
         }
 

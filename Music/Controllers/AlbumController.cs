@@ -19,6 +19,15 @@ namespace Music.Controllers
             return View(db.Albums.OrderByDescending(a => a.Title).ToList());
         }
 
+        // POST: Band Search
+        [HttpPost]
+        public ActionResult Index(AlbumSearch searchBox)
+        {
+            var albums = db.Albums
+                .Where(a => a.Title.Contains(searchBox.Search));
+            return View(albums.ToList());
+        }
+
         // GET: BandId and Name
         public ActionResult Create()
         {

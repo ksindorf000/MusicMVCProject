@@ -7,6 +7,14 @@ using System.Web;
 
 namespace Music.Models
 {
+    /***********************
+     * Search By Album
+     *********************/
+    public class AlbumSearch
+    {
+        public string Search { get; set; }
+    }
+
     public class Album
     {
         public int Id { get; set; }
