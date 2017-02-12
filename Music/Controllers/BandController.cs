@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Music.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Music.Models;
 
 namespace Music.Controllers
 {
@@ -32,11 +31,16 @@ namespace Music.Controllers
         // GET: Band/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Band band = db.Bands.Find(id);
+            ViewBag.albumList = new List<Album>();
+            ViewBag.albumList = db.Albums.Where(a => a.BandId == band.Id).ToList();
+
             if (band == null)
             {
                 return HttpNotFound();

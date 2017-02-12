@@ -10,14 +10,14 @@ namespace Music.Models
 {
     public class Track
     {
-        public int Id { get; set; }
-
-        //http://stackoverflow.com/questions/6531671/what-does-principal-end-of-an-association-means-in-11-relationship-in-entity-fr
-        [Required]
-        public Album Album { get; set; }
+        [Key]
+        public int Id { get; set; }      
+        public int AlbumId { get; set; }
 
         public string Title { get; set; }
         public TimeSpan? Length { get; set; }
+
+        public virtual Album Album { get; set; }
 
     }
 }

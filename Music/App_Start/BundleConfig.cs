@@ -21,10 +21,13 @@ namespace Music
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/jquery.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/simple-sidebar.css",
+                      "~/Content/appstyle.css",
                       "~/Content/site.css"));
         }
     }

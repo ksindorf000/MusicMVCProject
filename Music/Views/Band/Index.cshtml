@@ -1,51 +1,33 @@
 ﻿@model IEnumerable<Music.Models.Band>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-lg-2">
+        <h2>All Bands</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    </div>
+</div>
 
-<p>
-    @using (Html.BeginForm())
-    {
-        @Html.TextBox("Search", null, new { @class = "form-control" })
-        <br />
-        <input type="submit" value="Search" class="btn=btn-default" />
-        @Html.ActionLink("Clear Search", "Index")
-    }
-</p>
+<div class="row">
+    
+    <div class="col-lg-6 col-md-4 col-sm-4">
+        @foreach (var item in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @item.Name<br />
+                    <sup>@item.Formed.ToShortDateString()</sup>
+                </div>
+                <div class="panel-body">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </div>
+            </div>
+        }
+    </div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Formed)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Formed)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
+</div>

@@ -1,0 +1,21 @@
+﻿body {
+    padding-top: 0!important;
+    padding-left: 20px;
+}
+
+.extra-top {
+    margin-top: 10%;
+}
+
+.searchbox {
+    width: 75%;
+    margin-left: 10%;
+    margin-top: 25%;
+}
+
+.search-btn {
+    position: relative;
+    list-style: none;
+    width: 75%;
+    margin-left: 10%;
+}

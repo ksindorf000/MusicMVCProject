@@ -12,15 +12,14 @@ namespace Music.Controllers
         private BandsContext db = new BandsContext();
         
         // GET: Tracks for given album
-        public ActionResult Index(int? id)
-        {            
-            return View(db.Tracks.Where(t => t.Album.Id == id).ToList());
+        public ActionResult Index()
+        {
+            return View(db.Tracks.ToList());
         }
 
-        // GET: Tracks for given album
-        public ActionResult Create(int? id)
+        // CREATE: Tracks for given album
+        public ActionResult Create()
         {
-            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name");
             return View();
         }
 

@@ -28,6 +28,5 @@ namespace Music.Models
         public DateTime ReleaseDate { get; set; }
 
         public virtual Band Band { get; set; }
-        public virtual Track Track { get; set; }
     }
 }
