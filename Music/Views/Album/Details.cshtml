@@ -1,58 +1,29 @@
 ﻿@model Music.Models.Album
 
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Details</h2>
-
-<div>
-    <h4>Album</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Band.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Band.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-    </dl>
+<div class="row extra-top">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2> @Model.Title </h2>
+                <sup>Formed: @Model.ReleaseDate.ToShortDateString()</sup>
+            </div>
+            <div class="panel-body">
+                <strong>Tracks:</strong>
+                <ul>
+                    @foreach (var track in ViewBag.trackList)
+                    {
+                        <li>@track.Title (@track.Length)</li>
+                    }
+                </ul>
+            </div>
+            <div class="panel-footer">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
 </div>
 
-<table>
-    @foreach (var track in ViewBag.trackList)
-    {
-        <tr>
-            <td>
-                @track.Title;
-                @Html.DisplayNameFor(model => model.Track.Title)
-            </td>
+<div class="row">
 
-            <td>
-                @Html.DisplayFor(model => model.Track.Title)
-            </td>
-        </tr>
-    }
-</table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @*@Html.ActionLink("Add Tracks", "Create", "Track", new { id = Model.Id }, null) |*@
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>

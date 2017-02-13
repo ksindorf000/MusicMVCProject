@@ -1,47 +1,52 @@
 ﻿@model Music.Models.Album
 
-@{
-    ViewBag.Title = "Delete";
-}
 
-<h2>Delete</h2>
+<div class="row extra-top">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2> Are you sure you want to delete @Model.Title </h2>
+                <h3>@Html.ActionLink("CANCEL", "Index")</h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Band.Name)
+                    </dt>
 
-<h3>Are you sure you want to delete @Html.DisplayFor(model => model.Title)?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Band.Name)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Band.Name)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Band.Name)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ReleaseDate)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ReleaseDate)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
+                </dl>
+            </div>
+            <div class="panel-footer">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                }
+            </div>
         </div>
-    }
+    </div>
 </div>
+

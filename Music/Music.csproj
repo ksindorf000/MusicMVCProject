@@ -160,21 +160,9 @@
     <Compile Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.Designer.cs">
       <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702081853094_AddTracks.cs" />
-    <Compile Include="Migrations\201702081853094_AddTracks.Designer.cs">
-      <DependentUpon>201702081853094_AddTracks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702081936500_UpdateTrack.cs" />
-    <Compile Include="Migrations\201702081936500_UpdateTrack.Designer.cs">
-      <DependentUpon>201702081936500_UpdateTrack.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121826307_ChangedAlbumToAlbumIdOnTracks.cs" />
-    <Compile Include="Migrations\201702121826307_ChangedAlbumToAlbumIdOnTracks.Designer.cs">
-      <DependentUpon>201702121826307_ChangedAlbumToAlbumIdOnTracks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121946335_AddedKeyAnnotationToTrackId.cs" />
-    <Compile Include="Migrations\201702121946335_AddedKeyAnnotationToTrackId.Designer.cs">
-      <DependentUpon>201702121946335_AddedKeyAnnotationToTrackId.cs</DependentUpon>
+    <Compile Include="Migrations\201702130239083_AddedTrack.cs" />
+    <Compile Include="Migrations\201702130239083_AddedTrack.Designer.cs">
+      <DependentUpon>201702130239083_AddedTrack.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -261,17 +249,8 @@
     <EmbeddedResource Include="Migrations\201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.resx">
       <DependentUpon>201702080415055_RemoveNullableFromReleaseAddedTypeNameOfDateTime2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702081853094_AddTracks.resx">
-      <DependentUpon>201702081853094_AddTracks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702081936500_UpdateTrack.resx">
-      <DependentUpon>201702081936500_UpdateTrack.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121826307_ChangedAlbumToAlbumIdOnTracks.resx">
-      <DependentUpon>201702121826307_ChangedAlbumToAlbumIdOnTracks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121946335_AddedKeyAnnotationToTrackId.resx">
-      <DependentUpon>201702121946335_AddedKeyAnnotationToTrackId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702130239083_AddedTrack.resx">
+      <DependentUpon>201702130239083_AddedTrack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

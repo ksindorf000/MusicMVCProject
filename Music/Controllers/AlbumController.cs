@@ -110,6 +110,7 @@ namespace Music.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Album album = db.Albums.Find(id);
+            ViewBag.trackList = db.Tracks.Where(t => t.Album.Id == id).ToList();
             if (album == null)
             {
                 return HttpNotFound();

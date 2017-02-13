@@ -20,7 +20,7 @@ namespace Music.Controllers
         // CREATE: Track
         public ActionResult Create(int? id)
         {
-            ViewBag.albumId = (int)id;
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Title", id);
             return View();
         }
 
@@ -30,7 +30,7 @@ namespace Music.Controllers
         public ActionResult Create([Bind(Include = "Id,AlbumId,Title,Length")] Track track)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 db.Tracks.Add(track);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Album");

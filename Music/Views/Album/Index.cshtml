@@ -10,28 +10,26 @@
 
 <div class="row">
 
-    <div class="col-lg-6 col-md-4 col-sm-4">
+    <div class="col-lg-8 col-md-4 col-sm-4">
         @foreach (var item in Model)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>
                         <strong>@Html.DisplayFor(modelItem => item.Title)</strong>
-                    by @Html.DisplayFor(modelItem => item.Band.Name)
-                </h4>                    
+                        by @Html.DisplayFor(modelItem => item.Band.Name)
+                    </h4>
                 </div>
-                <div class="panel-body"> 
-                    <sup>Released on @item.ReleaseDate.ToShortDateString()</sup>           
-                    <ul>
-                        <li>
-                            Tracks go here...
-                        </li>
-                    </ul>
-                </div>
+                <div class="panel-body">
+                    <sup>Released on @item.ReleaseDate.ToShortDateString()</sup>
+                    </div>
                 <div class="panel-footer">
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |                        
+                        @Html.ActionLink("Add Tracks", "Create", "Track", new { id = item.Id }, null ) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </p>
                 </div>
             </div>
         }
