@@ -18,9 +18,9 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        All the Music
                     </a>
-                </li>                        
+                </li>
 
                 <li>
                     @Html.ActionLink("All Bands", "Index", "Band")
@@ -35,14 +35,15 @@
                         <strong>ENTER to Search Page</strong><br />
                         @Html.TextBox("Search", null, new { @class = "form-control" })
                         @Html.ActionLink("Clear Search", "Index")
-                    </li>                   
+                    </li>
                 }
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
-        @RenderBody()
-
+        <div class="container">
+            @RenderBody()
+        </div>
         <!-- /#page-content-wrapper -->
 
     </div>
@@ -54,11 +55,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    @*<!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>*@
 
     <!-- Menu Toggle Script -->
     <script>

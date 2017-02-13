@@ -17,9 +17,10 @@ namespace Music.Controllers
             return View(db.Tracks.ToList());
         }
 
-        // CREATE: Tracks for given album
-        public ActionResult Create()
+        // CREATE: Track
+        public ActionResult Create(int? id)
         {
+            ViewBag.albumId = (int)id;
             return View();
         }
 

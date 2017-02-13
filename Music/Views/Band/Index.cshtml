@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<Music.Models.Band>
 
 
-<div class="row">
-    <div class="col-lg-2">
-        <h2>All Bands</h2>
+<h1>All Bands</h1>
 
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-    </div>
-</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Band")
+</p>
+<hr />
 
 <div class="row">
     
@@ -18,8 +15,11 @@
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    @item.Name<br />
-                    <sup>@item.Formed.ToShortDateString()</sup>
+                    <h4>
+                        <strong> @item.Name</strong>
+                        <br /><br/>
+                    <sup>Formed on @item.Formed.ToShortDateString()</sup>
+                </h4>
                 </div>
                 <div class="panel-body">
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

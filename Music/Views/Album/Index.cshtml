@@ -1,31 +1,32 @@
 ﻿@model IEnumerable<Music.Models.Album>
 
 
-<div class="row">
-    <div class="col-lg-2">
-        <h2>All Albums</h2>
+<h1>All Albums</h1>
 
-        <p>
-            @Html.ActionLink("Create New", "Create", "Album")
-        </p>
-    </div>
-</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Album")
+</p>
+<hr />
 
 <div class="row">
-    
+
     <div class="col-lg-6 col-md-4 col-sm-4">
         @foreach (var item in Model)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    @Html.DisplayFor(modelItem => item.Title)
+                    <h4>
+                        <strong>@Html.DisplayFor(modelItem => item.Title)</strong>
+                    by @Html.DisplayFor(modelItem => item.Band.Name)
+                </h4>                    
                 </div>
-                <div class="panel-body">
-
-                    @Html.DisplayFor(modelItem => item.Band.Name)
-                    <br />
-
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                <div class="panel-body"> 
+                    <sup>Released on @item.ReleaseDate.ToShortDateString()</sup>           
+                    <ul>
+                        <li>
+                            Tracks go here...
+                        </li>
+                    </ul>
                 </div>
                 <div class="panel-footer">
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

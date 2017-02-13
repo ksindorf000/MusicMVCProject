@@ -4,9 +4,13 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-<h4>Album</h4>
+<h2>Edit @Model.Title</h2>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 <hr />
+
 <div class="row">
     <div class="col-lg-6">
         @using (Html.BeginForm())
@@ -51,6 +55,4 @@
         }
     </div>
 </div>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
