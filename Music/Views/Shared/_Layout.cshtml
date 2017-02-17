@@ -33,7 +33,8 @@
                 {
                     <li class="searchbox">
                         <strong>ENTER to Search Page</strong><br />
-                        @Html.TextBox("Search", null, new { @class = "form-control" })
+                        @Html.TextBox("Search", null, new { @class = "form-control",
+                       alt = "Search", title = "Will search by band or album depending on which page you are on." })
                         @Html.ActionLink("Clear Search", "Index")
                     </li>
                 }
